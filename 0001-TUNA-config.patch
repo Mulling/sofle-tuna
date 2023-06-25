@@ -1,0 +1,25 @@
+From bcde7b0fcaa54bb8f107defb743a923ebf99c9a0 Mon Sep 17 00:00:00 2001
+From: Mulling <lmulling@proton.me>
+Date: Sat, 24 Jun 2023 23:11:53 -0300
+Subject: [PATCH] TUNA config
+
+Signed-off-by: Mulling <lmulling@proton.me>
+---
+ keyboards/sofle/rev1/config.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/keyboards/sofle/rev1/config.h b/keyboards/sofle/rev1/config.h
+index be64549748..5a9c3d9148 100644
+--- a/keyboards/sofle/rev1/config.h
++++ b/keyboards/sofle/rev1/config.h
+@@ -1,5 +1,5 @@
+ #pragma once
+ 
+-#define TAPPING_TERM 100
+-
++#define TAPPING_TERM 200
++#define QUICK_TAP_TERM 0
+ #define TAP_CODE_DELAY 10
+-- 
+2.41.0
+
