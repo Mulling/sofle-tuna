@@ -1,0 +1,26 @@
+From 21ee9748a5206b8c7bcb5094b7e19a9cde5f7b51 Mon Sep 17 00:00:00 2001
+From: Mulling <lmulling@proton.me>
+Date: Sat, 8 Jul 2023 16:30:47 -0300
+Subject: [PATCH 3/3] Keyboard name and manufacturer
+
+Signed-off-by: Mulling <lmulling@proton.me>
+---
+ keyboards/sofle/rev1/info.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/keyboards/sofle/rev1/info.json b/keyboards/sofle/rev1/info.json
+index 23d411602e..cdc5ee9075 100644
+--- a/keyboards/sofle/rev1/info.json
++++ b/keyboards/sofle/rev1/info.json
+@@ -1,6 +1,6 @@
+ {
+-    "keyboard_name": "Sofle",
+-    "manufacturer": "JosefAdamcik",
++    "keyboard_name": "TUNA",
++    "manufacturer": "Gnussy Keyboards, Ltd.",
+     "url": "https://github.com/josefadamcik/SofleKeyboard",
+     "maintainer": "Josef Adamcik <josef.adamcik@gmail.com>",
+     "usb": {
+-- 
+2.41.0
+
