@@ -7,5 +7,5 @@
 Clone the repo in the keymaps directory and apply the patches with:
 
 ```shell
-git am tuna/*.patch
+git am < tuna/patches/*.patch
 ```
