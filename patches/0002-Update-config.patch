@@ -1,0 +1,30 @@
+From 81f9c1da2a43e3cdc4b1eed52b9b7b06f6018ea3 Mon Sep 17 00:00:00 2001
+From: Mulling <lmulling@proton.me>
+Date: Fri, 8 Sep 2023 13:36:43 -0300
+Subject: [PATCH 2/3] Update config
+
+Signed-off-by: Mulling <lmulling@proton.me>
+---
+ keyboards/sofle/rev1/info.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/keyboards/sofle/rev1/info.json b/keyboards/sofle/rev1/info.json
+index 70cc64d0ab..83f0c409e9 100644
+--- a/keyboards/sofle/rev1/info.json
++++ b/keyboards/sofle/rev1/info.json
+@@ -29,10 +29,10 @@
+         }
+     },
+     "tapping": {
+-        "term": 100
++        "term": 200
+     },
+     "qmk": {
+-        "tap_keycode_delay": 10
++        "tap_keycode_delay": 0
+     },
+     "processor": "atmega32u4",
+     "bootloader": "caterina",
+-- 
+2.42.0
+

@@ -1,0 +1,22 @@
+From 4b19c22b1393f952bd4e084e39092d3b4499fe55 Mon Sep 17 00:00:00 2001
+From: Mulling <lmulling@proton.me>
+Date: Fri, 8 Sep 2023 13:37:35 -0300
+Subject: [PATCH 3/3] Define QUICK_TAP_TERM
+
+Signed-off-by: Mulling <lmulling@proton.me>
+---
+ keyboards/sofle/rev1/config.h | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 keyboards/sofle/rev1/config.h
+
+diff --git a/keyboards/sofle/rev1/config.h b/keyboards/sofle/rev1/config.h
+new file mode 100644
+index 0000000000..2d1816c57b
+--- /dev/null
++++ b/keyboards/sofle/rev1/config.h
+@@ -0,0 +1,2 @@
++#pragma once
++#define QUICK_TAP_TERM 0
+-- 
+2.42.0
+
