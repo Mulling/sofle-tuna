@@ -7,20 +7,14 @@ enum sofle_layers {
     _ADJUST,
 };
 
-enum custom_keycodes {
-    KC_QWERTY = SAFE_RANGE
-};
+enum custom_keycodes { KC_QWERTY = SAFE_RANGE };
 
-#define MT_F MT(MOD_LCTL,KC_F)
-#define MT_D MT(MOD_LGUI,KC_D)
-#define MT_S MT(MOD_LALT,KC_S)
-#define MT_J MT(MOD_RCTL,KC_J)
-#define MT_K MT(MOD_LGUI,KC_K)
-#define MT_L MT(MOD_LALT,KC_L)
+#define MT_ESC MT(MOD_LCTL, KC_ESC)
 
 #define OS_R OSL(_RAISE)
 #define OS_L OSL(_LOWER)
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT(
 /*-----------------------------------------------------.                  .-----------------------------------------------------.
@@ -28,18 +22,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  |--------+--------+--------+--------+--------+--------|                  |--------+--------+--------+--------+--------+--------|
  |    TAB |      Q |      W |      E |      R |      T |                  |      Y |      U |      I |      O |      P |   BSPC |
  |--------+--------+--------+--------+--------+--------|                  |--------+--------+--------+--------+--------+--------|
- |    ESC |      A |     S* |     D* |     L* |      G |--------..--------|      H |     J* |     K* |     L* |      ; |      ' |
+ |   ESC* |      A |      S |      D |      L |      G |--------..--------|      H |      J |      K |      L |      ; |      ' |
  |--------+--------+--------+--------+--------+--------|        ||        |--------+--------+--------+--------+--------+--------|
  | LSHIFT |      Z |      X |      C |      V |      B |--------||--------|      N |      M |      , |      . |      / | RSHIFT |
  '-----------------------------------------------------/        /\        \-----------------------------------------------------'
-                |   LGUI |   LALT |  LOWER |  ENTER | /  SPACE /  \  ENTER \ |  SPACE |  RAISE |  RALT  |   RGUI |
+                |   LGUI |   LALT |  LOWER |  ENTER | /  SPACE /  \  ENTER \ |  SPACE |  RAISE |  RGUI  |   RALT |
                 |        |        |        |        |/        /    \        \|        |        |        |        |
                 '--------------------------------------------'      '--------------------------------------------*/
    KC_GRV,    KC_1,    KC_2,     KC_3,   KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_DEL,
    KC_TAB,    KC_Q,    KC_W,     KC_E,   KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
-   KC_ESC,    KC_A,    MT_S,     MT_D,   MT_F,    KC_G,                       KC_H,    MT_J,    MT_K,    MT_L, KC_SCLN, KC_QUOT,
+   MT_ESC,    KC_A,    KC_S,     KC_D,   KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
   KC_LSFT,    KC_Z,    KC_X,     KC_C,   KC_V,    KC_B, XXXXXXX,  XXXXXXX,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
-                 KC_LGUI, KC_LALT,    OS_L,   KC_ENT,  KC_SPC,        KC_ENT,  KC_SPC,    OS_R, KC_RALT, KC_RGUI
+                 KC_LGUI, KC_LALT,    OS_L,   KC_ENT,  KC_SPC,        KC_ENT,  KC_SPC,    OS_R, KC_RGUI, KC_RALT
 ),
 
 [_LOWER] = LAYOUT(
@@ -90,19 +84,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______
   )
 };
+// clang-format on
 
 #include <string.h>
 #include "raw_hid.h"
 void raw_hid_receive(uint8_t *data, uint8_t length) {
     switch (data[0]) {
         case 1:
-            {
-                oled_write((char*)data + 1 , false);
-
-            }
-        break;
+            oled_write((char *)data + 1, false);
+            break;
         default:
-        break;
+            break;
     }
 
     raw_hid_send(data, length);
